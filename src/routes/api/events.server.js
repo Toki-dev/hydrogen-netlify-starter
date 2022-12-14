@@ -44,7 +44,7 @@ try {
   }
 
 
-  return await cachedDb.find();
+  return 'jjjjj'
 } catch (error) {
   return 'gggg ' +error
 }
