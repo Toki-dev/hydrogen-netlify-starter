@@ -62,6 +62,7 @@ console.log('response', response.url)
           <Text color="subtle">Create event</Text>
         </Link>
 xx {typeof xx}
+{Object.keys(xx).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
     )
