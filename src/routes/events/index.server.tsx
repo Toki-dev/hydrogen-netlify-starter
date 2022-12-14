@@ -41,7 +41,7 @@ console.log('response', response.url)
     console.log('ssdata', data)
     return data
   } catch (error) {
-    return error
+   throw 'eerrre!';
   }
  
    
