@@ -37,9 +37,15 @@ console.log('response', response.url)
   try {
     const res = await fetch(`${new URL(response.url).origin}/api/events`)
     console.log('ressssss', res)
-    const data = await res.json()
-    console.log('ssdata', data)
+try {
+  const data = await res.json()
+/*     console.log('ssdata', data) */
     return data
+} catch (error) {
+  throw `aaaa! ${error.message}`;
+}
+
+    
   } catch (error) {
    throw `eerrre! ${error.message}`;
   }
@@ -51,7 +57,7 @@ console.log('response', response.url)
     },
   );
 
-  console.log('eventdata', xx.data)
+ /*  console.log('eventdata', xx.data) */
 
   if(!xx?.data) {
     return (
