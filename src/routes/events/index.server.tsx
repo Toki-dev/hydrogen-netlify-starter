@@ -31,7 +31,7 @@ export default function Blog({response}: HydrogenRouteProps) {
 
 
 console.log('response', response.url)
-  const {data} = useQuery(
+  const xx = useQuery(
     ['unique', 'key'], // A string or an array to uniquely identify the query.
     async () => {
   try {
@@ -51,9 +51,9 @@ console.log('response', response.url)
     },
   );
 
-  console.log('eventdata', data)
+  console.log('eventdata', xx.data)
 
-  if(!data?.length) {
+  if(!xx?.data) {
     return (
       <Layout>
       <Seo type="page" data={{title: 'All Journals'}} />
@@ -61,7 +61,21 @@ console.log('response', response.url)
         <Link to="/events/add">
           <Text color="subtle">Create event</Text>
         </Link>
-   {data}
+xx
+      </PageHeader>
+    </Layout>
+    )
+  }
+
+  if(!xx.data?.length) {
+    return (
+      <Layout>
+      <Seo type="page" data={{title: 'All Journals'}} />
+      <PageHeader heading={BLOG_HANDLE} className="gap-0">
+        <Link to="/events/add">
+          <Text color="subtle">Create event</Text>
+        </Link>
+hh
       </PageHeader>
     </Layout>
     )
@@ -75,8 +89,8 @@ console.log('response', response.url)
           <Text color="subtle">Create event</Text>
         </Link>
         <Suspense>
-        {data?.map((e, i) => {
-            return <div key={e.id}> {e?.name}_________ccc</div>;
+        {xx.data?.map((e, i) => {
+            return <div key={e.id}> {e?.name}___e______ccc</div>;
           })} 
         </Suspense>
       </PageHeader>
