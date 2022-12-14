@@ -47,7 +47,7 @@ try {
 
     
   } catch (error) {
-   throw `eerrre! ${error.message}`;
+   throw `eerrre! ${error}`;
   }
  
    
