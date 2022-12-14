@@ -53,6 +53,20 @@ console.log('response', response.url)
 
   console.log('eventdata', data)
 
+  if(!data){
+    return (
+      <Layout>
+      <Seo type="page" data={{title: 'All Journals'}} />
+      <PageHeader heading={BLOG_HANDLE} className="gap-0">
+        <Link to="/events/add">
+          <Text color="subtle">Create event</Text>
+        </Link>
+    no data found
+      </PageHeader>
+    </Layout>
+    )
+  }
+
   return (
     <Layout>
       <Seo type="page" data={{title: 'All Journals'}} />
