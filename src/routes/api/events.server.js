@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
  const eventSchema = new mongoose.Schema({
   name: String,
@@ -21,7 +21,7 @@ const connectToDatabase = async (uri) => {
   // we can cache the access to our database to speed things up a bit
   // (this is the only thing that is safe to cache here)
   if (cachedDb) return cachedDb;
-try {
+
   const client = await   mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://sandor:xZj4EJFn9cPrrI0H@cluster0.gcspyje.mongodb.net/?retryWrites=true&w=majority', {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -31,10 +31,6 @@ try {
   cachedDb = client.model('Event', eventSchema);
 
   return cachedDb;
-} catch (error) {
-  throw error;
-}
-
 };
 
 /*  */
@@ -48,7 +44,7 @@ try {
   }
 
 
-  return 'jjjjj'
+  return await cachedDb.find();
 } catch (error) {
   return 'gggg ' +error
 }
