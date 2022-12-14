@@ -42,7 +42,7 @@ export function EventCreateForm({userId}) {
       city,
       userId
     });
-
+console.log('ffff')
     if (eventCreateResponse.error) {
       setSubmitError(eventCreateResponse.error);
       return;
@@ -188,7 +188,8 @@ export async function callEventCreateApi({
   userId: string;
 }) {
   try {
-    const res = await fetch(`/events/add`, {
+   
+    const res = await fetch(`${window.location.origin}/api/events`, {
       method: 'POST',
       headers: {
         Accept: 'application/json',
@@ -204,6 +205,7 @@ export async function callEventCreateApi({
         userId,
       }),
     });
+    console.log('naaaaaame___kkkkkkkkkkkkkkkk', res)
     if (res.status === 200) {
       return {};
     } else {

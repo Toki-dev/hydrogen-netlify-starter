@@ -30,7 +30,7 @@ export default function Blog({response}: HydrogenRouteProps) {
   );  */
 
 
-console.log('response', response)
+console.log('response', response.url)
   const {data} = useQuery(
     ['unique', 'key'], // A string or an array to uniquely identify the query.
     async () => {
@@ -54,7 +54,7 @@ console.log('response', response)
         </Link>
         <Suspense>
         {data?.map((e, i) => {
-            return <div key={e.id}> {e?.name}</div>;
+            return <div key={e.id}> {e?.name}_________ccc</div>;
           })} 
         </Suspense>
       </PageHeader>
