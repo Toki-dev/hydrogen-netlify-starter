@@ -42,7 +42,7 @@ try {
 /*     console.log('ssdata', data) */
     return data
 } catch (error) {
-  throw `aaaa! ${error.message}`;
+  throw `aaaa! ${error}`;
 }
 
     
