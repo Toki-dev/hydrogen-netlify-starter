@@ -72,8 +72,8 @@ try {
           <Text color="subtle">Create event</Text>
         </Link>
 xx {typeof xx.error}
-{xx.error}
-{Object.keys(xx).map(x =>(<div>{x}</div>))}
+ff {xx.error}
+gg {Object.keys(xx).map(x =>(<div>d-{x}</div>))}
       </PageHeader>
     </Layout>
     )
