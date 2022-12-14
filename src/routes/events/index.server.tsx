@@ -53,7 +53,7 @@ console.log('response', response.url)
 
   console.log('eventdata', data)
 
-  if(!data){
+  if(!data?.length) {
     return (
       <Layout>
       <Seo type="page" data={{title: 'All Journals'}} />
@@ -61,7 +61,7 @@ console.log('response', response.url)
         <Link to="/events/add">
           <Text color="subtle">Create event</Text>
         </Link>
-    no data found
+   {data}
       </PageHeader>
     </Layout>
     )
