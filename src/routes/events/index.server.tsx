@@ -41,7 +41,7 @@ console.log('response', response.url)
     console.log('ssdata', data)
     return data
   } catch (error) {
-   throw 'eerrre!';
+   throw `eerrre! ${error.message}`;
   }
  
    
@@ -62,6 +62,7 @@ console.log('response', response.url)
           <Text color="subtle">Create event</Text>
         </Link>
 xx {typeof xx.error}
+{xx.error}
 {Object.keys(xx).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
