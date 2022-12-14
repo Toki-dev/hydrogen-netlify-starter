@@ -34,16 +34,24 @@ console.log('response', response.url)
   const {data} = useQuery(
     ['unique', 'key'], // A string or an array to uniquely identify the query.
     async () => {
-  
-      const res = await fetch(`${new URL(response.url).origin}/api/events`)
-      const data = await res.json()
-      return data
+  try {
+    const res = await fetch(`${new URL(response.url).origin}/api/events`)
+    console.log('ressssss', res)
+    const data = await res.json()
+    console.log('ssdata', data)
+    return data
+  } catch (error) {
+    return error
+  }
+ 
    
     },
     {
      
     },
   );
+
+  console.log('eventdata', data)
 
   return (
     <Layout>
