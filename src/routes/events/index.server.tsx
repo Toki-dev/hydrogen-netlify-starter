@@ -76,6 +76,7 @@ xx
           <Text color="subtle">Create event</Text>
         </Link>
 hh {typeof xx}
+{Object.keys(xx).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
     )
