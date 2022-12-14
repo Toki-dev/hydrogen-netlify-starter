@@ -61,7 +61,7 @@ console.log('response', response.url)
         <Link to="/events/add">
           <Text color="subtle">Create event</Text>
         </Link>
-xx
+xx {typeof xx}
       </PageHeader>
     </Layout>
     )
