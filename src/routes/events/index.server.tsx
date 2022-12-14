@@ -42,7 +42,7 @@ try {
 /*     console.log('ssdata', data) */
     return data
 } catch (error) {
-  throw `aaaa! ${error} ${typeof res}`;
+  throw `aaaa! ${error} ${typeof res} ${new URL(response.url).origin} ${Object.keys(res).toString()} `;
 }
 
     
