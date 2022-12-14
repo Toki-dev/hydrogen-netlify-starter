@@ -40,7 +40,7 @@ console.log('response', response.url)
 try {
   const hasKeys = !!Object.keys(res).length;
   if(hasKeys){
-    const data = await res?.json()
+    const data = await res//?.json()
     /*     console.log('ssdata', data) */
         return data
   }
