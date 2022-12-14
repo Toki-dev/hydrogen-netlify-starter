@@ -75,7 +75,7 @@ xx
         <Link to="/events/add">
           <Text color="subtle">Create event</Text>
         </Link>
-hh {xx.data}
+hh {xx}
       </PageHeader>
     </Layout>
     )
