@@ -14,11 +14,12 @@ import mongoose from 'mongoose';
 
  const EventsModel = mongoose.model('Event', eventSchema);
 
-mongoose.connect('mongodb+srv://sandor:xZj4EJFn9cPrrI0H@cluster0.gcspyje.mongodb.net/?retryWrites=true&w=majority', {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-}
-); 
+/*  */
 export async function api() {
+  mongoose.connect('mongodb+srv://sandor:xZj4EJFn9cPrrI0H@cluster0.gcspyje.mongodb.net/?retryWrites=true&w=majority', {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  }
+  );
   return await EventsModel.find({});
 }
