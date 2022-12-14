@@ -29,7 +29,7 @@ try {
   }
 
 
-  return await EventsModel.find({});
+  return await EventsModel.find();
 } catch (error) {
   return error
 }
