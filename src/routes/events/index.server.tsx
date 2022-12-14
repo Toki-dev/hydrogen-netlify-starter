@@ -39,12 +39,12 @@ console.log('response', response.url)
     console.log('ressssss', res)
 try {
   const hasKeys = !!Object.keys(res).length;
-  
+  if(hasKeys){
     const data = await res?.json()
     /*     console.log('ssdata', data) */
         return data
-  
-
+  }
+  throw `bbb! ${typeof res} ${new URL(response.url).origin} ${Object.keys(res).toString()} `;
 } catch (error) {
   throw `aaaa! ${error} ${typeof res} ${new URL(response.url).origin} ${Object.keys(res).toString()} `;
 }
