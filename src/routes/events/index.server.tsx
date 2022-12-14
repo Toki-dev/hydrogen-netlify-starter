@@ -38,9 +38,13 @@ console.log('response', response.url)
     const res = await fetch(`${new URL(response.url).origin}/api/events`)
     console.log('ressssss', res)
 try {
-  const data = await res?.json()
-/*     console.log('ssdata', data) */
-    return data
+  const hasKeys = !!Object.keys(res).length;
+  if(hasKeys){
+    const data = await res?.json()
+    /*     console.log('ssdata', data) */
+        return data
+  }
+
 } catch (error) {
   throw `aaaa! ${error} ${typeof res} ${new URL(response.url).origin} ${Object.keys(res).toString()} `;
 }

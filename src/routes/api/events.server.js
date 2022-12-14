@@ -31,7 +31,7 @@ try {
 
   return await EventsModel.find();
 } catch (error) {
-  return error
+  throw error
 }
 
 }
