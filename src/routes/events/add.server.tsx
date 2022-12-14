@@ -76,7 +76,7 @@ export async function api(
     );
   }
   main().catch((e) => console.error(e));
-
+console.log('here--------------------------')
   // a document instance
   const ee = new EventModel({
     name: jsonBody.name,
