@@ -75,7 +75,7 @@ xx
         <Link to="/events/add">
           <Text color="subtle">Create event</Text>
         </Link>
-hh {typeof xx}
+hh {typeof xx.data}
 {Object.keys(xx).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
