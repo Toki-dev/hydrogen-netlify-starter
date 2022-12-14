@@ -39,11 +39,11 @@ console.log('response', response.url)
     console.log('ressssss', res)
 try {
   const hasKeys = !!Object.keys(res).length;
-  if(hasKeys){
-    const data = await res//?.json()
+  
+    const data = await res?.json()
     /*     console.log('ssdata', data) */
         return data
-  }
+  
 
 } catch (error) {
   throw `aaaa! ${error} ${typeof res} ${new URL(response.url).origin} ${Object.keys(res).toString()} `;
@@ -73,7 +73,7 @@ try {
         </Link>
 xx {typeof xx.error}
 ff {xx.error}
-gg {Object.keys(xx).map(x =>(<div>d-{x}</div>))}
+{Object.keys(xx).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
     )
