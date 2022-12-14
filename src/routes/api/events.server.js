@@ -17,7 +17,7 @@ import mongoose from 'mongoose';
 /*  */
 export async function api(request, {params, queryShop}) {
 try {
-  mongoose.connect('mongodb+srv://sandor:xZj4EJFn9cPrrI0H@cluster0.gcspyje.mongodb.net/?retryWrites=true&w=majority', {
+  mongoose.connect(process.env.MONGODB_URI , {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   }
