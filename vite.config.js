@@ -17,6 +17,6 @@ export default defineConfig({
     hookTimeout: 10000,
   },
   ssr: {
-    noExternal: [],
+    noExternal: ['mongodb'],
 }
 });
