@@ -49,7 +49,7 @@ console.log('________________', data3)
   const res = await fetch('https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',config2)
   
   console.log('reest', res)
-  return JSON.stringify(res)
+  return { status: 200}
  
    
   
