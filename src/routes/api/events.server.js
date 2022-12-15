@@ -64,12 +64,12 @@ export async function api(request, res ) {
         return queryDatabase();
       case 'POST':
         const z =await pushToDatabase(JSON.parse(request.body), res);
-        throw new Error('hh')
-        return new Response(null, {status:201 }); 
+     
+        return new Response(null, {status:400 }); 
       default:
         return {statusCode: 400};
     }
   } catch (error) {
-    throw new Error(error)
+    throw error
   }
 }
