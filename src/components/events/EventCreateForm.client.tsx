@@ -43,7 +43,10 @@ export function EventCreateForm({userId}) {
       userId
     });
 console.log('ffff', eventCreateResponse)
-   
+    if (eventCreateResponse.error) {
+      setSubmitError(eventCreateResponse.error);
+      return;
+    }
 
    /*  navigate('/events'); */
   }
@@ -185,15 +188,19 @@ export async function callEventCreateApi({
   userId: string;
 }) {
   try {
-    
+    console.log('datasent', name, description, startDate)
     const res = await fetch(`${window.location.origin}/api/events`, {
       method: 'POST',
-      body: JSON.stringify({
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({data:{
         name,
         description
-      }),
+      }}),
     });
-    const x =  res
+    const x = await res.json()
   console.log('ggggg', x, res)
       return x;
     
