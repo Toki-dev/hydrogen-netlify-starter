@@ -2,10 +2,10 @@
 import {defineConfig} from 'vite';
 import hydrogen from '@shopify/hydrogen/plugin';
 import netlifyPlugin from '@netlify/hydrogen-platform/plugin';
-import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
+
 
 export default defineConfig({
-  plugins: [hydrogen(), netlifyPlugin(), viteCommonjs()],
+  plugins: [hydrogen(), netlifyPlugin()],
   resolve: {
     alias: [{find: /^~\/(.*)/, replacement: '/src/$1'}],
   },
