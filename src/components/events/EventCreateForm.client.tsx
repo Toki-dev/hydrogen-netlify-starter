@@ -33,7 +33,7 @@ export function EventCreateForm({userId}) {
 
     setSubmitError(null);
 
-    const eventCreateResponse = await callEventCreateApi({
+    const eventCreateResponse =  callEventCreateApi({
       name,
       description,
       startDate,
@@ -43,10 +43,7 @@ export function EventCreateForm({userId}) {
       userId
     });
 console.log('ffff', eventCreateResponse)
-    if (eventCreateResponse.error) {
-      setSubmitError(eventCreateResponse.error);
-      return;
-    }
+   
 
    /*  navigate('/events'); */
   }

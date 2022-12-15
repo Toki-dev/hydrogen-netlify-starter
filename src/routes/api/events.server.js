@@ -30,7 +30,10 @@ const pushToDatabase = async (data3, re) => {
       collection: 'events',
       database: 'test',
       dataSource: 'Cluster0',
-      document: data3,
+      document: {
+        "status": "open2",
+        "text": "Do the dishes2"
+      },
     };
 
     var config2 = {
