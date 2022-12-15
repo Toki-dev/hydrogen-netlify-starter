@@ -193,7 +193,7 @@ export async function callEventCreateApi({
         description
       }),
     });
-    const x = await res.json()
+    const x =  res
   console.log('ggggg', x, res)
       return x;
     
