@@ -207,7 +207,7 @@ export async function callEventCreateApi({
     });
 
     if (res.status === 200) {
-      return {};
+      return {res};
     } else {
       return res.json();
     }
