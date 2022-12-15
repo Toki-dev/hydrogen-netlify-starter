@@ -68,7 +68,7 @@ try {
 
 } */
 
-import { MongoClient, ServerApiVersion } from 'mongodb';
+const { MongoClient } = require("mongodb");
 const MONGODB_URI = process.env.MONGODB_URI || 'mongodb+srv://sandor:xZj4EJFn9cPrrI0H@cluster0.gcspyje.mongodb.net/?retryWrites=true&w=majority'
 
 let cachedDb = null;

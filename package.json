@@ -18,6 +18,7 @@
   },
   "devDependencies": {
     "@netlify/hydrogen-platform": "^1.1.2",
+    "@originjs/vite-plugin-commonjs": "^1.0.3",
     "@shopify/cli": "3.15.0",
     "@shopify/cli-hydrogen": "3.15.0",
     "@shopify/prettier-config": "^1.1.2",

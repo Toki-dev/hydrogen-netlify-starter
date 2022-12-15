@@ -2,9 +2,10 @@
 import {defineConfig} from 'vite';
 import hydrogen from '@shopify/hydrogen/plugin';
 import netlifyPlugin from '@netlify/hydrogen-platform/plugin';
+import { viteCommonjs } from '@originjs/vite-plugin-commonjs'
 
 export default defineConfig({
-  plugins: [hydrogen(), netlifyPlugin()],
+  plugins: [hydrogen(), netlifyPlugin(), viteCommonjs()],
   resolve: {
     alias: [{find: /^~\/(.*)/, replacement: '/src/$1'}],
   },
@@ -16,7 +17,5 @@ export default defineConfig({
     testTimeout: 10000,
     hookTimeout: 10000,
   },
-  ssr: {
-    noExternal: ['mongodb'],
-}
+
 });
