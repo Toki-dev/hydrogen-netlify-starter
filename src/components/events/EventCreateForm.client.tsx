@@ -205,7 +205,7 @@ export async function callEventCreateApi({
         userId,
       }),
     });
-    console.log('naaaaaame___kkkkkkkkkkkkkkkk', res)
+
     if (res.status === 200) {
       return {};
     } else {

@@ -29,13 +29,32 @@ export default function Blog({response}: HydrogenRouteProps) {
     }
   );  */
 
+  var data = JSON.stringify({
+    "collection": "events",
+    "database": "test",
+    "dataSource": "Cluster0",
+  
+  });
+            
+  var config = {
+    method: 'post',
+    headers: {
+      'Content-Type': 'application/json',
+      'Access-Control-Request-Headers': '*',
+      'api-key': 't0FA8t5vlbggADy0PP0ZE3voJkCvQm8w0ux7PFHTtykkQEDOeWvY6DIzEML9z6dG',
+    },
+    body: data
+  };
+  
+
 
 console.log('response', response.url)
   const xx = useQuery(
     ['unique', 'key'], // A string or an array to uniquely identify the query.
     async () => {
   try {
-    const res = await fetch(`${new URL(response.url).origin}/api/events`)
+    const res = await fetch('https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/find',config)
+
     const data = await res.json()
     console.log('ressssss-------------', data) 
 
