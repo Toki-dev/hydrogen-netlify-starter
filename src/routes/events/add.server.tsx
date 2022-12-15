@@ -75,10 +75,10 @@ export async function api(
       {status: 400},
     );
   }
-  main().catch((e) => console.error(e));
+
 console.log('here--------------------------')
   // a document instance
-  const ee = new EventModel({
+  const data3 = {
     name: jsonBody.name,
     description: jsonBody.description,
     startDate: jsonBody.startDate,
@@ -87,31 +87,51 @@ console.log('here--------------------------')
     city: jsonBody.city,
     userId: jsonBody.userId,
     approved: false,
-  });
+  };
 
-  const data = await ee.save();
+  try {
+    var data2 = {
+      collection: 'events',
+      database: 'test',
+      dataSource: 'Cluster0',
+      document: data3,
+    };
 
-  const errorMessage = null; //getApiErrorMessage('customerCreate', data, errors);
-
-  if (!errorMessage && data) {
-    return new Response(null, {
-      status: 200,
-    });
-  } else {
-    return new Response(
-      JSON.stringify({
-        error: errorMessage ?? 'Unknown error',
-      }),
-      {status: 401},
+    var config2 = {
+      method: 'post',
+      headers: {
+        'Content-Type': 'application/json',
+        'api-key':
+          't0FA8t5vlbggADy0PP0ZE3voJkCvQm8w0ux7PFHTtykkQEDOeWvY6DIzEML9z6dG',
+      },
+      body: JSON.stringify(data2),
+    };
+    const res = await fetch(
+      'https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',
+      config2,
     );
+const data = await res.json()
+const errorMessage = null; //getApiErrorMessage('customerCreate', data, errors);
+
+if (!errorMessage && data) {
+  return new Response(null, {
+    status: 200,
+  });
+} else {
+  return new Response(
+    JSON.stringify({
+      error: errorMessage ?? 'Unknown error',
+    }),
+    {status: 401},
+  );
+}
+  } catch (error) {
+    return JSON.stringify(error);
   }
+
+
+
+
 }
 
-const CUSTOMER_QUERY = gql`
-  query CustomerDetails($customerAccessToken: String!)
-  @inContext() {
-    customer(customerAccessToken: $customerAccessToken) {
-      firstName
-    }
-  }
-`;
+
