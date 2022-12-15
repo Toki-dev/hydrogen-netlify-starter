@@ -46,9 +46,9 @@ const pushToDatabase = async (data3, re) => {
       'https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',
       config2,
     );
-
-    console.log('reest', res, re);
-   return {...res,status: res.status}; 
+const data = await res.json()
+    console.log('reest', data.insertedId);
+   return {insertedId: data.insertedId}; 
   } catch (error) {
     return JSON.stringify(error);
   }
