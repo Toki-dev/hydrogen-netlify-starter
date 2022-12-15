@@ -207,7 +207,7 @@ export async function callEventCreateApi({
     });
 
   
-      return res;
+      return await res.json();
     
   } catch (error: any) {
     return {
