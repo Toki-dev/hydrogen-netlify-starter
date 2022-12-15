@@ -48,7 +48,7 @@ const pushToDatabase = async (data3, re) => {
     );
 
     console.log('reest', res, re);
-   return {status: res.status}; 
+   return {...res,status: res.status}; 
   } catch (error) {
     return JSON.stringify(error);
   }
