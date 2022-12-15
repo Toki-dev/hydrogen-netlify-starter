@@ -38,8 +38,8 @@ console.log('response', response.url)
     const res = await fetch(`${new URL(response.url).origin}/api/events`)
     const data = await res.json()
      console.log('ressssss-------------', data) 
-return data
 
+return data
     
   } catch (error) {
    throw `eerrre! ${error}`;
@@ -52,7 +52,7 @@ return data
     },
   );
 
- console.log('eventdata', xx.data) 
+ /*  console.log('eventdata', xx.data) */
 
   if(!xx?.data) {
     return (
@@ -70,7 +70,7 @@ ff {xx.error}
     )
   }
 
-  if(!xx.data?.documents?.length) {
+  if(!xx.data.documents?.length) {
     return (
       <Layout>
       <Seo type="page" data={{title: 'All Journals'}} />
@@ -79,7 +79,7 @@ ff {xx.error}
           <Text color="subtle">Create event</Text>
         </Link>
 hh {typeof xx.data}
-{Object.keys(xx.data?.documents).map(x =>(<div>{x}</div>))}
+{Object.keys(xx.data).map(x =>(<div>{x}</div>))}
       </PageHeader>
     </Layout>
     )

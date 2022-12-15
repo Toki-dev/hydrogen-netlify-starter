@@ -42,10 +42,7 @@ console.log('________________', data3)
       'Content-Type': 'application/json',
       'api-key': 't0FA8t5vlbggADy0PP0ZE3voJkCvQm8w0ux7PFHTtykkQEDOeWvY6DIzEML9z6dG',
     },
-    body: {"document": {
-      "name": "open",
-      "text": "Do the dishes"
-    }}
+    body: JSON.stringify(data2) 
   };
       
 
