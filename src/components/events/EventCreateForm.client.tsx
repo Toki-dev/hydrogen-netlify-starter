@@ -205,9 +205,9 @@ export async function callEventCreateApi({
         userId,
       }),
     });
-
-  
-      return await res.json();
+    const x = await res.json()
+  console.log('ggggg', x)
+      return x;
     
   } catch (error: any) {
     return {
