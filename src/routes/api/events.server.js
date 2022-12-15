@@ -51,7 +51,7 @@ const pushToDatabase = async (data3, re) => {
     );
 const data = await res.json()
     console.log('reest', data.insertedId);
-   return new Response(null, {status: res.status || 203 }); 
+   return data
   } catch (error) {
     return error;
   }
@@ -63,12 +63,13 @@ export async function api(request, res ) {
       case 'GET':
         return queryDatabase();
       case 'POST':
-        await pushToDatabase(JSON.parse(request.body), res);
-        return new Response(null, {status:202 }); 
+        const z =await pushToDatabase(JSON.parse(request.body), res);
+        throw new Error('hh')
+        return new Response(null, {status:201 }); 
       default:
         return {statusCode: 400};
     }
   } catch (error) {
-    return error;
+    throw new Error(error)
   }
 }
