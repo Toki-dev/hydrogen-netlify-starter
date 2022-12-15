@@ -57,7 +57,7 @@ export default function Register({response}: HydrogenRouteProps) {
     <Layout>
       <Suspense>
         <Seo type="noindex" data={{title: 'Register'}} />
-      </Suspense>sssw
+      </Suspense>
       <EventCreateForm userId={data?.customer?.id} />
     </Layout>
   );

@@ -195,13 +195,19 @@ export async function callEventCreateApi({
         Accept: 'application/json',
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({data:{
+      body: JSON.stringify({
         name,
-        description
-      }}),
+        description,
+        startDate,
+        links,
+        location,
+        city,
+        userId,
+      }),
     });
- 
-      return res;
+    const x = await res.json()
+  console.log('ggggg', x,)
+      return x;
     
   } catch (error: any) {
     return {
