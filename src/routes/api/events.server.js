@@ -49,27 +49,18 @@ console.log('________________', data3)
   const res = await fetch('https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',config2)
   
   console.log('reest', res)
-  return { status: 200}
+  return JSON.stringify(res) 
  
-   
-  
+
   
 };
 
-      
-
-
-
+    
 
 export async function api(request, {params, queryShop}) {
   try {
-
-/* 
-  const db = await connectToDatabase(MONGODB_URI); */
-
   switch (request.method ) {
     case "GET":
-      console.log('hhhd')
       return queryDatabase();
     case "POST":
       return pushToDatabase( JSON.parse(request.body));

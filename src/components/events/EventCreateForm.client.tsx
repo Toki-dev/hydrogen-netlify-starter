@@ -206,11 +206,9 @@ export async function callEventCreateApi({
       }),
     });
 
-    if (res.status === 200) {
-      return {res};
-    } else {
-      return res.json();
-    }
+  
+      return res;
+    
   } catch (error: any) {
     return {
       error: error.toString(),
