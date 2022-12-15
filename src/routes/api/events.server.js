@@ -45,11 +45,15 @@ console.log('________________', data3)
     body: JSON.stringify(data2)  
   };
       
-
+try {
   const res = await fetch('https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',config2)
   
   console.log('reest', res)
   return JSON.stringify(res) 
+} catch (error) {
+  return JSON.stringify(error) 
+}
+  
  
 
   
