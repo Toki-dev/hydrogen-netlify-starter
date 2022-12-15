@@ -22,7 +22,7 @@ const queryDatabase = async () => {
  const res = await fetch('https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/find',config)
 const data = await res.json()
 
-return JSON.stringify(data)
+return data
 
 };
 

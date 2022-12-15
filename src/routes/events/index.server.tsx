@@ -37,7 +37,7 @@ console.log('response', response.url)
   try {
     const res = await fetch(`${new URL(response.url).origin}/api/events`)
     const data = await res.json()
-     console.log('ressssss-------------', data) 
+    console.log('ressssss-------------', data) 
 
 return data
     
