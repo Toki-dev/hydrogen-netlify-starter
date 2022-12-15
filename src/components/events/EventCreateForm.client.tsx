@@ -42,13 +42,13 @@ export function EventCreateForm({userId}) {
       city,
       userId
     });
-console.log('ffff')
+console.log('ffff', eventCreateResponse)
     if (eventCreateResponse.error) {
       setSubmitError(eventCreateResponse.error);
       return;
     }
 
-    navigate('/events');
+   /*  navigate('/events'); */
   }
 
 
