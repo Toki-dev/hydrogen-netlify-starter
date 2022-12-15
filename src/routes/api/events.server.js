@@ -63,9 +63,7 @@ export async function api(request, res ) {
       case 'GET':
         return queryDatabase();
       case 'POST':
-        return await pushToDatabase(JSON.parse(request.body), res);
-     
-        return new Response(null, {status:400 }); 
+        return  pushToDatabase(JSON.parse(request.body), res);
       default:
         return {statusCode: 400};
     }
