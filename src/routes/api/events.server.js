@@ -42,7 +42,7 @@ console.log('________________', data3)
       'Content-Type': 'application/json',
       'api-key': 't0FA8t5vlbggADy0PP0ZE3voJkCvQm8w0ux7PFHTtykkQEDOeWvY6DIzEML9z6dG',
     },
-    body: JSON.stringify(data2) 
+    body: JSON.stringify(data2)  
   };
       
 
@@ -63,7 +63,7 @@ export async function api(request, {params, queryShop}) {
     case "GET":
       return queryDatabase();
     case "POST":
-      return pushToDatabase( request.body);
+      return pushToDatabase( JSON.parse(request.body));
     default:
       return { statusCode: 400 };
   }
