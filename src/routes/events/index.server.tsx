@@ -36,7 +36,7 @@ console.log('response', response.url)
     async () => {
   try {
     const res = await fetch(`${new URL(response.url).origin}/api/events`)
-    console.log('ressssss', res)
+  /*   console.log('ressssss', res) */
 try {
   const hasKeys = !!Object.keys(res).length;
   if(hasKeys){

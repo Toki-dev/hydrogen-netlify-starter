@@ -40,8 +40,8 @@ export default function Post({params, response}: HydrogenRouteProps) {
       customerAccessToken,
     },
   });
-  console.log('data..............', data)
-
+/*   console.log('data..............', data)
+ */
 
 
   return (
