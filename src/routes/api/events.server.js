@@ -51,7 +51,7 @@ const pushToDatabase = async (data3, re) => {
     );
 const data = await res.json()
     console.log('reest', data.insertedId);
-   return new Response(null, {status: res.status }); 
+   return new Response(null, {status: res.status || 203 }); 
   } catch (error) {
     return error;
   }
