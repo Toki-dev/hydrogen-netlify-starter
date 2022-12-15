@@ -150,6 +150,10 @@ function DesktopHeader({countryCode, isHome, menu, openCart, title}) {
               {item.title}
             </Link>
           ))}
+
+<Link key='events' to='/events' target='_self'>
+              Events
+            </Link>
         </nav>
       </div>
       <div className="flex items-center gap-1">

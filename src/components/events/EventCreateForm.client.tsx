@@ -48,7 +48,7 @@ console.log('ffff', eventCreateResponse)
       return;
     }
 
-   /*  navigate('/events'); */
+   navigate('/events');
   }
 
 
