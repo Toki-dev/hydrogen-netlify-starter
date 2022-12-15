@@ -185,17 +185,13 @@ export async function callEventCreateApi({
   userId: string;
 }) {
   try {
-    console.log('datasent', name, description, startDate)
+    
     const res = await fetch(`${window.location.origin}/api/events`, {
       method: 'POST',
-      headers: {
-        Accept: 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({data:{
+      body: JSON.stringify({
         name,
         description
-      }}),
+      }),
     });
     const x = await res.json()
   console.log('ggggg', x, res)
