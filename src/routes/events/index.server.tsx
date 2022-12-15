@@ -44,6 +44,8 @@ return data
     },
   );
 
+ console.log('eventdata', xx.data) 
+
 
 
   return (
