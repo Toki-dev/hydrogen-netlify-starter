@@ -33,7 +33,7 @@ export function EventCreateForm({userId}) {
 
     setSubmitError(null);
 
-    const eventCreateResponse =  callEventCreateApi({
+    const eventCreateResponse = await callEventCreateApi({
       name,
       description,
       startDate,

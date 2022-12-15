@@ -57,7 +57,7 @@ export default function Register({response}: HydrogenRouteProps) {
     <Layout>
       <Suspense>
         <Seo type="noindex" data={{title: 'Register'}} />
-      </Suspense>sss
+      </Suspense>sssw
       <EventCreateForm userId={data?.customer?.id} />
     </Layout>
   );
@@ -110,6 +110,11 @@ console.log('here--------------------------')
       'https://data.mongodb-api.com/app/data-iobky/endpoint/data/v1/action/insertOne',
       config2,
     );
+
+    return new Response(null, {
+      status: 203,
+
+    })
 const data = await res.json()
 const errorMessage = null; //getApiErrorMessage('customerCreate', data, errors);
 
