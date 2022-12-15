@@ -200,9 +200,8 @@ export async function callEventCreateApi({
         description
       }}),
     });
-    const x = await res.json()
-  console.log('ggggg', x, res)
-      return x;
+ 
+      return res;
     
   } catch (error: any) {
     return {
