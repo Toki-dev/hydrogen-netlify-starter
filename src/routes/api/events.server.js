@@ -63,7 +63,7 @@ export async function api(request, res ) {
       case 'GET':
         return queryDatabase();
       case 'POST':
-        const z =await pushToDatabase(JSON.parse(request.body), res);
+        return await pushToDatabase(JSON.parse(request.body), res);
      
         return new Response(null, {status:400 }); 
       default:
